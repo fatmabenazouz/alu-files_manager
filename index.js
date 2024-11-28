@@ -44,7 +44,6 @@ app.use("/users", userRoutes);
 app.use("/files", fileRoutes); 
 app.use("/auth", authRoutes); 
 
-
 app.get("/", (req, res) => {
   res.send("Welcome to our multilingual file manager platform!");
 });
