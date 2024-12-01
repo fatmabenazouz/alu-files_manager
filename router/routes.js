@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('./controllers/userController');
-const fileController = require('./controllers/fileController');
-
-router.post('/register', userController.register);
-router.post('/login', userController.login);
+const fileController = require('../controllers/fileController');
 
 router.post('/files', fileController.createFile);
 router.get('/files', fileController.getFiles);
