@@ -9,7 +9,7 @@ This multilingual file manager application demonstrates learned understanding of
 
 ## Demo Link
 
-Link to demonstration video: [youtube.com)](https://youtu.be/GYVIoS2SBRA)
+Link to demonstration video: [youtube.com](https://youtu.be/GYVIoS2SBRA)
 
 ## Features
 
