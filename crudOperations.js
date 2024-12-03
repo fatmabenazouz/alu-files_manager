@@ -1,4 +1,4 @@
-const File = require('./models/file'); // Adjust the path to your Mongoose File model
+const File = require('./models/file'); 
 
 async function createFile(fileData) {
   try {
@@ -61,11 +61,10 @@ async function deleteFile(fileId) {
   }
 }
 
-// Example usage
 (async () => {
   await createFile({ userId: '648fcba0ab12cd1234567890', name: 'example.txt', size: 1234, type: 'text/plain', path: '/path/to/file' });
   await getAllFiles();
-  await getFileById('648fcba0ab12cd1234567890'); // Replace with an actual MongoDB ObjectId
+  await getFileById('648fcba0ab12cd1234567890'); 
   await updateFile('648fcba0ab12cd1234567890', { name: 'updated_example.txt', size: 5678 });
   await deleteFile('648fcba0ab12cd1234567890');
 })();
