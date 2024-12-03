@@ -1,6 +1,6 @@
 # Multilingual File Manager Application
 
-This is a multilingual file manager application that demonstrates learned understanding of databases, asynchronous task handling, internationalization, and unit testing.
+This multilingual file manager application demonstrates learned understanding of databases, asynchronous task handling, internationalization, and unit testing.
 
 ## Team Members
 
