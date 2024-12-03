@@ -2,28 +2,28 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
-const JWT_SECRET = process.env.JWT_SECRET || "YOUR_JWT_SECRET"; // Use environment variables for secrets
+const JWT_SECRET = process.env.JWT_SECRET || "YOUR_JWT_SECRET"; 
 
-// Register a new user
+
 const registerUser = async (req, res) => {
     try {
         const { fullName, email, password } = req.body;
 
-        // Validate request
+        
         if (!fullName || !email || !password) {
             return res.status(400).json({ message: 'All fields are required' });
         }
 
-        // Check if user already exists
+        
         const existingUser = await User.findOne({fullName});
         if (existingUser) {
             return res.status(400).json({ message: `${duplicateField} already exists` });
         }
 
-        // Hash password
+        
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create user
+       
         const user = new User({ fullName, email, password: hashedPassword });
         await user.save();
 
@@ -35,7 +35,7 @@ const registerUser = async (req, res) => {
     }
 };
 
-// Login user
+
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -54,7 +54,7 @@ const loginUser = async (req, res) => {
             return res.status(401).json({ message: 'Invalid password' });
         }
 
-        // Generate JWT token
+       
         const token = jwt.sign({ id: user._id }, JWT_SECRET, );
 
         res.status(200).json({ message: 'Login successful', token, user:user, status:true });

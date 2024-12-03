@@ -7,13 +7,13 @@ i18next
   .use(Backend)
   .use(i18nextMiddleware.LanguageDetector)
   .init({
-    fallbackLng: 'en', // Default language
-    preload: ['en', 'fr'], // Load these languages
+    fallbackLng: 'en', 
+    preload: ['en', 'fr'], 
     backend: {
       loadPath: path.join(__dirname, '/locales/{{lng}}/translation.json'),
     },
     detection: {
-      order: ['querystring', 'header'], // Query parameter first, then headers
+      order: ['querystring', 'header'], 
       caches: false,
     },
   });

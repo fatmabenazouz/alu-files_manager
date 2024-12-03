@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
-// Define the schema for the File model
 const fileSchema = new mongoose.Schema(
   {
     userId: {
-      type: mongoose.Schema.Types.ObjectId, // Referencing the User model
-      ref: 'UserModel', // Reference to the User model
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: 'UserModel', 
       required: true,
     },
     name: {
@@ -28,9 +27,8 @@ const fileSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // Automatically add createdAt and updatedAt fields
+    timestamps: true, 
   }
 );
 
-// Export the File model
 module.exports = mongoose.model('File', fileSchema);
